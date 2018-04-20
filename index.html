@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图灵API</title>
+		<script src="jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+    <textarea rows="5" cols="" placeholder="请输入内容" name="info" id="info"></textarea>
+    <br>
+    <input type="button" onclick="doSubmit()" value="提交">
+    <br>
+    <label id="res"></label>
+	<script type="text/javascript">
+
+    function doSubmit(){
+        var info = $('#info').val();
+        var url='http://www.tuling123.com/openapi/api';
+        // $(selector).get(url,data,success(response,status,xhr),dataType)
+        $.get(url, {
+        key : "cd09f4261167416fafedc0a4a1862f00",
+			info : info
+    }, function (response) {
+            var a = response;
+			console.log(a);
+			alert(a.text);
+
+			console.log("aa")
+
+        });
+
+    }
+
+    </script>
+  </body>
+</html>
